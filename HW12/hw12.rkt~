@@ -1,0 +1,129 @@
+;Your Name: 
+;Course: CSE 240
+; Use the template for your programming assignment
+
+;Q1 (3 points)
+(define OR-GATE (lambda (a b)
+            
+(define AND-GATE (lambda (a b)
+              
+(define NOT-GATE (lambda (a)
+               
+; Test cases
+(AND-GATE 0 0)
+(AND-GATE 0 1)
+(AND-GATE 1 0)
+(AND-GATE 1 1)
+;0
+;0
+;0
+;1
+(newline)
+(OR-GATE 0 0)
+(OR-GATE 0 1)
+(OR-GATE 1 0)
+(OR-GATE 1 1)
+;0
+;1
+;1
+;1
+(newline)
+(NOT-GATE 0)
+(NOT-GATE 1)
+;1
+;0
+
+;Q2 (3 points)
+(define XOR-GATE (lambda (a b)
+
+; Test cases
+(newline)
+(XOR-GATE 0 0)
+(XOR-GATE 0 1)
+(XOR-GATE 1 0)
+(XOR-GATE 1 1)
+;0
+;1
+;1
+;0
+
+;Q3
+;Q3.1 (3 points)
+(define halfAdder (lambda (x a b)
+                  
+;Q3.2 (3 points)
+(define carry-out (lambda (x a b)
+                  
+;Q3.3 (3 points)
+(define fullAdder (lambda (x a b)
+                  
+; Test cases
+(newline)
+(fullAdder 0 0 0) 	
+(fullAdder 0 0 1) 	
+(fullAdder 0 1 0) 	
+(fullAdder 0 1 1)	
+(fullAdder 1 0 0) 	
+(fullAdder 1 0 1)	
+(fullAdder 1 1 0) 	
+(fullAdder 1 1 1) 
+;(0 . 0)
+;(1 . 0)
+;(1 . 0)
+;(0 . 1)
+;(1 . 0)
+;(0 . 1)
+;(0 . 1)
+;(1 . 1)
+
+
+;Q4
+;Q4.1 (5 points)
+(define tail (lambda (lst)
+               
+;Q4.2 (5 points)
+(define rmtail (lambda (lst)
+                
+;Q4.4 (15 points)
+(define X1 '(0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0) )	
+(define X2 '(1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1) )	
+(define X3 '(0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1) )	
+(define X4 '(1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0) )
+(define X5 '(0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1) )	
+(define X6 '(1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1) )
+
+(define n-bit-adder (lambda (L1 L2 n)
+
+(define n-bit-adderhelper (lambda (L1 L2 n resulti)
+
+(define n-bit-adder-carry-out (lambda (L1 L2 n resulti)
+
+;Test cases
+(newline)
+(n-bit-adder  X1 X2 32)
+(n-bit-adder  X3 X4 32)
+(n-bit-adder  X5 X6 32)
+(n-bit-adder  X2 X3 32)
+(n-bit-adder  X4 X5 32)
+(n-bit-adder  X1 X6 32)
+(newline)
+(n-bit-adder  X1 X3 32)
+(n-bit-adder  X1 X4 32)
+(n-bit-adder  X1 X5 32)
+(n-bit-adder  X2 X4 32)
+(n-bit-adder  X2 X5 32)
+(n-bit-adder  X2 X6 32)
+
+;((0) 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1)
+;((0) 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1)
+;((1) 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0)
+;((1) 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0)
+;((1) 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1)
+;((0) 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1)
+
+;((0) 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1)
+;((0) 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0)
+;((0) 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1)
+;((1) 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0 1)
+;((1) 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 0)
+;((1) 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0)
